@@ -1,0 +1,32 @@
+1. Crear package.json
+    npm init
+
+2. Instalar express (dependencia de produccion)
+    npm i express
+
+3. Instalar nodemon (detecta cambios en los archivos y reinicia el servidor)
+    npm i --save-dev nodemon
+
+4. Una cez creado index.js que instancia express y crea el servidor
+    "dev": "nodemon index.js" (desde el package.json)
+    npm run dev (desde la terminal)
+
+Desde package.json:
+"type": "module" -> para habilitar los modulos en Node
+
+Instalar PUG - (Template Engine)
+npm install pug
+
+Instalar sequelize (ORM)
+    npm install mysql2 sequelize
+
+Deployment
+
+dependencia para generar variables de entorno
+    npm install --save-dev dotenv
+
+Hacer del proyecto un repositorio
+    git init
+
+    crear archivo gitignore
+        nombre de los archivos que no se van a subir
