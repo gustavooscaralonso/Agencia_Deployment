@@ -64,3 +64,9 @@ conectar con la base de datos
 
 probar si se importo correctamente la base de datos (agrega las variables de entorno)
     heroku config:set BD_NOMBRE=heroku_590df364d8aa514
+
+para nuevos cambios
+    git add .
+    git commit -m "(mensaje)"
+    git push -u origin master -> sube los archivos
+    git push production master -> replica los archivos en heroku
