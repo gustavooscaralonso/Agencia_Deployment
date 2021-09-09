@@ -30,3 +30,37 @@ Hacer del proyecto un repositorio
 
     crear archivo gitignore
         nombre de los archivos que no se van a subir
+
+    git add .
+    git commit -m "Mensaje"
+
+desinstalar heroku
+npm uninstall -g heroku-cli
+
+instalar heroku
+npm i -g heroku
+
+crear app en heroku
+heroku create --remote production
+
+asociar el repositorio de git a heroku
+git push production master
+
+migrar base de datos
+mysqldump -u root -p agenciaviajes > agenciaviajes.sql
+    si no funciona en la terminal de VS, probar en el CMD.
+    si trae error de creacion, probar el siguiente comando
+        mysqldump --column-statistics=0 -u root -p agenciaviajes > agenciaviajes.sql
+
+subir la base de datos al servidor (nombre de la variable que nos da la pagina de heroku)
+    heroku config | grep CLEARDB_DATABASE_URL
+    si no funciona grep:
+        heroku config | findstr CLEARDB_DATABASE_URL
+        y trae esto:
+        CLEARDB_DATABASE_URL: mysql://b630e07a07e30b:e1d229da@us-cdbr-east-04.cleardb.com/heroku_590df364d8aa514?reconnect=true
+
+conectar con la base de datos
+    mysql -u b630e07a07e30b -h us-cdbr-east-04.cleardb.com -p heroku_590df364d8aa514 < agenciaviajes.sql
+
+probar si se importo correctamente la base de datos (agrega las variables de entorno)
+    heroku config:set BD_NOMBRE=heroku_590df364d8aa514
